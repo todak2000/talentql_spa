@@ -1,0 +1,1 @@
+# talentql_spa
