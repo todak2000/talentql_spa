@@ -201,6 +201,7 @@ form {
     border: 1px solid transparent;
     font-family: 'Space Grotesk';
     color:#fff;
+    cursor: pointer;
     font-weight: 800;
     margin: 1rem 25% 0 25%;
 }
