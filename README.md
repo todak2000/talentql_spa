@@ -4,6 +4,10 @@
 
 Cut Session is an application that solves the problem of scheduling sessions in photo and music studios, so that customers can simply go online and book sessions after seeing which ones are open on the dates they are interested in.
 
+## Deployed URL
+
+https://cut-session.onrender.com/
+
 ## General Features
 
 1. Sessions are time slots of either 45 minutes, 60 minutes or 90 minutes and can exist from 9am to 8pm on weekdays or 10am to 10pm on Saturdays

@@ -329,13 +329,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p data-clip style="cursor:pointer;">X</p>
                     <p>Add this Script to the body of your page</p>
                     <div class="clipp"> 
-                        <span id="copy-script-text">&lt;script id=${userId} src="/Users/todak/Desktop/talentql/talentql_spa/frontend/static/js/widget/index.js"&gt;&lt;/script&gt;</span>
+                        <span id="copy-script-text">&lt;script id=${userId} src="https://cut-session.onrender.com/static/js/widget/index.js"&gt;&lt;/script&gt;</span>
                         <button class="clipp-btn" id="copy-script" data-copy>Copy</button>
                     </div>
 
                     <p>Add this css link to the head of the page</p>
                     <div class="clipp"> 
-                        <span id="copy-css-text">&lt;link rel="stylesheet" href="/Users/todak/Desktop/talentql/talentql_spa/frontend/static/css/index.css"&gt;</span>   
+                        <span id="copy-css-text">&lt;link rel="stylesheet" href="https://cut-session.onrender.com/static/css/index.css"&gt;</span>   
                         <button class="clipp-btn" id="copy-css" data-copy>Copy</button>
                     </div>
                     <p>Your Page should look like this when you are done</p>
@@ -344,10 +344,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             &lt;html&gt;
                             &lt;head&gt;
                             &lt;title&gt;Demo page of the widget&lt;/title&gt;
-                            &lt;link rel="stylesheet" href="/Users/todak/Desktop/talentql/talentql_spa/frontend/static/css/index.css"&gt;
+                            &lt;link rel="stylesheet" href="https://cut-session.onrender.com/static/css/index.css"&gt;
                                 &lt;/head&gt;
                                 &lt;body&gt;
-                                &lt;script id="b2c13957-1b5a-5069-3ae5-713ec739fdd0" src="/Users/todak/Desktop/talentql/talentql_spa/frontend/static/js/widget/index.js"&gt;&lt;/script&gt;
+                                &lt;script id="b2c13957-1b5a-5069-3ae5-713ec739fdd0" src="https://cut-session.onrender.com/static/js/widget/index.js"&gt;&lt;/script&gt;
                                 &lt;/body&gt;
                             
                             &lt;/html&gt;
