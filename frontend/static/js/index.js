@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // register function
         if (e.target.matches("[data-register]")) {
             let userType = document.getElementById("accessType").value
+            
             e.preventDefault();
             let formData
             if (userType === "USER") {
@@ -329,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p data-clip style="cursor:pointer;">X</p>
                     <p>Add this Script to the body of your page</p>
                     <div class="clipp"> 
-                        <span id="copy-script-text">&lt;script id=${userId} src="https://cut-session.onrender.com/static/js/widget/index.js"&gt;&lt;/script&gt;</span>
+                        <span id="copy-script-text">&lt;script id="${userId}" src="https://cut-session.onrender.com/static/js/widget/index.js"&gt;&lt;/script&gt;</span>
                         <button class="clipp-btn" id="copy-script" data-copy>Copy</button>
                     </div>
 
@@ -347,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             &lt;link rel="stylesheet" href="https://cut-session.onrender.com/static/css/index.css"&gt;
                                 &lt;/head&gt;
                                 &lt;body&gt;
-                                &lt;script id="b2c13957-1b5a-5069-3ae5-713ec739fdd0" src="https://cut-session.onrender.com/static/js/widget/index.js"&gt;&lt;/script&gt;
+                                &lt;script id="${userId}" src="https://cut-session.onrender.com/static/js/widget/index.js"&gt;&lt;/script&gt;
                                 &lt;/body&gt;
                             
                             &lt;/html&gt;

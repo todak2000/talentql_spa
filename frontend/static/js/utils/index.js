@@ -16,17 +16,22 @@ export function loginUsers(data){
         headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'},
         body: JSON.stringify(data) 
       };
-      
+      let btn = document.getElementById("signin-sumbit-btn")
+        btn.disabled = true;
+        btn.innerText = "Loging in..."
       fetch(`${url}/sign-in`, options)
         .then(response => response.json())
         .then(response => {
             document.getElementById("error").style.display = "none";
             document.getElementById("error").innerText = "";
             if (response.errors) {
+                btn.disabled = false;
+                btn.innerText = "Loginn Again."
                 document.getElementById("error").style.display = "block";
                 document.getElementById("error").innerText = "Oops! an error occured";
             }
             else{
+                btn.innerText = "Redirecting.."
                 localStorage.setItem("token", JSON.stringify(response.token));
                 localStorage.setItem("accessType", JSON.stringify(data.accessType));
                 if (history?.state?.prevUrl === undefined) {
@@ -56,16 +61,22 @@ export function registerUsers(userType, data){
         headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'},
         body: JSON.stringify(data)
     };
+    let btn = document.getElementById("signup-sumbit-btn")
+    btn.disabled = true;
+    btn.innerText = "Submitting Data..."
       fetch(`${url}/register/${typeOfUser}`, options)
         .then(response => response.json())
         .then(response => {
             document.getElementById("error").style.display = "none";
             document.getElementById("error").innerText = "";
             if (response.errors) {
+                btn.disabled = false;
+                btn.innerText = "Submit Again"
                 document.getElementById("error").style.display = "block";
                 document.getElementById("error").innerText = "Oops! an error occured";
             }
             else{
+                btn.innerText = "Re-directing to login..."
                 localStorage.setItem("defaultCity", JSON.stringify(data.cityOfOperation || data.cityOfResidence));
                 localStorage.setItem("userId", response.userId || response.merchantId);
                 navigateTo('/login');
