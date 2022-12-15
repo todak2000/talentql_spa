@@ -1,5 +1,3 @@
-# talentql_spa
-
 # TalentQL PROJECT (Cut Session):
 
 Cut Session is an application that solves the problem of scheduling sessions in photo and music studios, so that customers can simply go online and book sessions after seeing which ones are open on the dates they are interested in.
