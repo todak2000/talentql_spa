@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
             cardMain.innerHTML="";
             response.forEach(x => {
                 cardMain.innerHTML+=`
-                <div class="cardy" id="${x.id}" data-merchantId>
-                    <div class="innder-cardy" id="${x.id}" data-merchantId></div>
+                <div class="cardy" id="${x.id}" data-merchantid>
+                    <div class="innder-cardy" id="${x.id}" data-merchantid></div>
                     <h5 class="card-h5">Type: ${x.type}</h5>
                     <h5 class="card-h5">Period: ${x.startsAt.slice(0,-8)} - ${x.endsAt.slice(0,-8)}</h5>
                     <button type="button" class="btn-book" id="${x.id}"  data-bookings>Book this session</button>
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <form>
                     <p data-diff style="cursor:pointer">X</p>
                     <p id="message"></p>
-                    <input class="form-input-widget" type="text" id="sessionId" name="sessionId" data-sessionId  minlength="15" maxlength="100" required hidden />
+                    <input class="form-input-widget" type="text" id="sessionId" name="sessionId" data-sessionid  minlength="15" maxlength="100" required hidden />
                     
                     <input class="form-input-widget" type="date" id="date" name="date" data-date  required />
                     <p id="no-warning"></p>

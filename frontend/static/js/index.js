@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             location.href = '/login';
         }
         // dynamic page function
-        if (e.target.matches("[data-merchantId]")) {
+        if (e.target.matches("[data-merchantid]")) {
             e.preventDefault();
             if (location.pathname === '/' && accessType === "USER") {
                 getSigleMerchantSessions(e.target.id)
@@ -455,7 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
              
         }
         // form city validation
-        if (e.target.matches("[data-cityOfResidence]") || e.target.matches("[data-cityOfOperation]")) {
+        if (e.target.matches("[data-cityofresidence]") || e.target.matches("[data-cityofoperation]")) {
             if (e.target.value.length < 2 || e.target.value.length > 25) {
                 document.getElementById("city-warning").innerText = "City must not be less than 2 characters";
             }
@@ -487,7 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
              
         }
         // form phoneNumber validation
-        if (e.target.matches("[data-phoneNumber]")) {
+        if (e.target.matches("[data-phonenumber]")) {
             let phoneFormat = /^\d{10}$/
             let phoneCheck = e.target.value.match(phoneFormat);
             if (phoneCheck === null) {

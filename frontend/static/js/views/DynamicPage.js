@@ -32,7 +32,7 @@ export default class extends AbstractView {
                 <div id="bookings-form">
                     <p id="message"></p>
                     <form>
-                        <input class="form-input" type="text" id="sessionId" name="sessionId" data-sessionId  minlength="15" maxlength="100" required hidden />
+                        <input class="form-input" type="text" id="sessionId" name="sessionId" data-sessionid  minlength="15" maxlength="100" required hidden />
                         
                         <input class="form-input" type="date" id="date" name="date" data-date  required />
                         <p id="no-warning"></p>
@@ -68,8 +68,8 @@ export default class extends AbstractView {
                             <option value="WeekEnd">WeekEnd (Sat)</option>
                         </select>
                         <div class="time-div">
-                            <input class="form-time" type="text" id="startsAt" name="startsAt" data-startsAt   placeholder="Start Time" onfocus="(this.type='time')" required /> 
-                            <input class="form-time" type="time" id="endsAt" name="endsAt" data-endsAt   placeholder="End Time" disabled />
+                            <input class="form-time" type="text" id="startsAt" name="startsAt" data-startsat   placeholder="Start Time" onfocus="(this.type='time')" required /> 
+                            <input class="form-time" type="time" id="endsAt" name="endsAt" data-endsat   placeholder="End Time" disabled />
                         </div>
                         <p id="no-warning"></p>
         
