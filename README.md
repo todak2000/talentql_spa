@@ -34,7 +34,7 @@ Developers using this project should already have and have good knowledge of:
 - node
 - Javascript
 
-Clone the application by following the instructions below
+Clone and run the application by following the instructions below
 
 ```
 git clone https://github.com/todak2000/talentql_spa.git
