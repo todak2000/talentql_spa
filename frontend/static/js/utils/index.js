@@ -26,7 +26,7 @@ export function loginUsers(data){
             document.getElementById("error").innerText = "";
             if (response.errors) {
                 btn.disabled = false;
-                btn.innerText = "Loginn Again."
+                btn.innerText = "Login Again."
                 document.getElementById("error").style.display = "block";
                 document.getElementById("error").innerText = "Oops! an error occured";
             }
