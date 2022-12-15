@@ -11,11 +11,10 @@ export const defaultCity = JSON.parse(window.localStorage.getItem('defaultCity')
 export const token = JSON.parse(window.localStorage.getItem('token'))
 
 export function loginUsers(data){
-    console.log(data, "login data")
     const options = {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'},
-        body: JSON.stringify(data) //'{"username":"string","password":"pa$$word","accessType":"USER"}'
+        body: JSON.stringify(data) 
       };
       
       fetch(`${url}/sign-in`, options)
@@ -41,8 +40,6 @@ export function loginUsers(data){
                 }
                 
             }
-            console.log(history?.state?.prevUrl, "prev")
-            console.log(response)
         })
         .catch(err => console.error(err));
 }
@@ -54,7 +51,6 @@ export function registerUsers(userType, data){
     else if (userType === "MERCHANT") {
         typeOfUser = "merchants"
     }
-    // console.log(JSON.stringify(data), "form data")
     const options = {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'},
@@ -75,20 +71,15 @@ export function registerUsers(userType, data){
                 navigateTo('/login');
                 
             }
-            console.log(response)
         })
         .catch(err => console.error(err));
 }
 export function getMerchants(offset=1, query=""){
     
-    // let off = offset || 1
-    // let q = query || ""
-    console.log(query, "querytest..")
     let options = {method: 'GET', headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'}};
     fetch(`${url}/clients?type=MERCHANT&limit=20&offset=${offset}&city=${query}&name=${query}`, options)
       .then(response => response.json())
       .then(response => {
-        console.log(response, "test..")
         localStorage.setItem("merchantData", JSON.stringify(response.data));
         
         // resulting data
@@ -132,18 +123,13 @@ export function getMerchants(offset=1, query=""){
 export function getBookings(city, merchant="", offset=1, period=30){
     let dayDate = new Date().toISOString().slice(0, 10);
     let future =  new Date()
-    // document.getElementById('card-result').innerHTML=`<div class="loader"></div>`; 
     future.setDate(future.getDate() + period);
     let futureDate = future.toISOString().split('T')[0];
     let p = `${dayDate}:${futureDate}`
-    console.log(offset, city, merchant, period, " offset, city, merchant, period..datetest..")
     let options = {method: 'GET', headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'}};
     fetch(`${url}/bookings?limit=20&offset=${offset}&city=${city}&merchant=${merchant}&period=${p}`, options)
       .then(response => response.json())
       .then(response => {
-        console.log(response, "test..")
-        // localStorage.setItem("merchantData", JSON.stringify(response.data));
-        
         // resulting data
         if (response.data.length > 0) { 
             document.getElementById('card-result').innerHTML="";
@@ -181,17 +167,11 @@ export function getBookings(city, merchant="", offset=1, period=30){
 }
 
 export function getSigleMerchantSessions(merchantId){
-    
-    // let off = offset || 1
-    // let q = query || ""
-    console.log(merchantId, "querytest..")
     let options = {method: 'GET', headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'}};
     
     fetch(`${url}/studios/${merchantId}`, options)
       .then(response => response.json())
       .then(response => {
-        console.log(response, "test..")
-        // localStorage.setItem("merchantData", JSON.stringify(response.data));
         document.getElementById('merchant-id').value = merchantId;
         // resulting data
         if (response.length > 0) { 
@@ -219,11 +199,10 @@ export function getSigleMerchantSessions(merchantId){
 }
 
 export function bookSession(data){
-    console.log(data, "booksession data")
     const options = {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'},
-        body: JSON.stringify(data) //'{"username":"string","password":"pa$$word","accessType":"USER"}'
+        body: JSON.stringify(data) 
       };
       
       fetch(`${url}/bookings`, options)
@@ -249,19 +228,16 @@ export function bookSession(data){
                 btn.disabled = true;
                 btn.innerText = "Completed!"
             }
-            console.log(response)
         })
         .catch(err => console.error(err));
 }
 
 export function createSession(data){
-    console.log(data, "createsession data")
     const options = {
         method: 'POST',
         headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'},
         body: JSON.stringify(data) 
       };
-    //   let userIda = "b2c13957-1b5a-5069-3ae5-713ec739fdd0"
       fetch(`${url}/studios/${userId}`, options)
         .then(response => response.json())
         .then(response => {
@@ -289,7 +265,6 @@ export function createSession(data){
                 btn.disabled = true;
                 btn.innerText = "Completed!"
             }
-            console.log(response)
         })
         .catch(err => console.error(err));
 }

@@ -1,5 +1,4 @@
 import AbstractView from "./AbstractView.js";
-import { Navbar } from "./Navbar.js";
 
 export default class extends AbstractView {
     constructor(params) {

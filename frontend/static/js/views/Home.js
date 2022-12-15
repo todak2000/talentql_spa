@@ -1,6 +1,6 @@
 import AbstractView from "./AbstractView.js";
 import { Navbar } from "./Navbar.js";
-import { accessType, current,userId } from "../utils/index.js";
+import { accessType } from "../utils/index.js";
 export default class extends AbstractView {
     constructor(params) {
         super(params);

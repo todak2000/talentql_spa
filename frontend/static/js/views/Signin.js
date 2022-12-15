@@ -1,6 +1,5 @@
 import AbstractView from "./AbstractView.js";
 import { Navbar } from "./Navbar.js";
-import { getMerchants } from "../utils/index.js";
 
 export default class extends AbstractView {
     constructor(params) {
