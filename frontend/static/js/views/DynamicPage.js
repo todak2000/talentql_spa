@@ -1,12 +1,10 @@
 import AbstractView from "./AbstractView.js";
 import { Navbar } from "./Navbar.js";
-import { getMerchants } from "../utils/index.js";
-import { accessType, current, userId } from "../utils/index.js";
+import { accessType, current } from "../utils/index.js";
 export default class extends AbstractView {
     constructor(params) {
         super(params);
         this.setTitle("Dashboard");
-        // this.page = params.route;
         this.id = params.id
     }
     
@@ -16,10 +14,6 @@ export default class extends AbstractView {
      
 
     async getHtml() {
-        // console.log(JSON.parse(window.localStorage.getItem('accessType')), 'asa11')
-        // const data = JSON.parse(window.localStorage.getItem('merchantData'))
-        // const accessType = JSON.parse(window.localStorage.getItem('accessType'))
-        // const current = JSON.parse(window.localStorage.getItem('current'))
         return [Navbar, 
             accessType && accessType === "USER" ?
             `

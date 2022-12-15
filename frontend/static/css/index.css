@@ -37,6 +37,7 @@ body{
     background: #000000;
     padding: 2%;
     display: flex;
+    overflow-x: auto;
     justify-content: space-between;
     color: #ccc;
     font-family: 'Courier New', Courier, monospace;
@@ -66,7 +67,6 @@ body{
 .main-section{
     width:80%;
     padding: 1% 10%;
-    /* background-color: aqua; */
 }
 .search-input{
     width:50%;
@@ -85,7 +85,6 @@ body{
 .card-container{
     width: 80%;
     padding: 1% 0;
-    /* background-color: aquamarine; */
     height: 40vh;
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -122,7 +121,6 @@ body{
 .flex-center{
     display: flex;
     justify-content: center;
-    /* background-color: yellow; */
     margin: 0.5rem;
     flex-direction: row;
     align-items: center;
@@ -149,7 +147,6 @@ body{
 #signup-form, #signin-form, #bookings-form {
     width:40%;
     height:50vh;
-    /* background-color: #006a95; */
     display: none;
     margin: auto;
 }
@@ -364,7 +361,6 @@ form {
     #signup-form,#signin-form {
         width: 100%;
         height:auto;
-        /* background-color: #006a95; */
         display: none;
         margin: auto;
     }

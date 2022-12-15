@@ -17,7 +17,6 @@ const getParams = match => {
     const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
     return Object.fromEntries(keys.map((key, i) => {
-        console.log([key, values[i]], "asads")
         return [key, values[i]];
     }));
 };
@@ -47,7 +46,6 @@ const router = async () => {
     });
 
     let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
-    console.log(match, "match")
     if (!match) {
         match = {
             route: routes[routes.length - 1],
@@ -68,29 +66,23 @@ const router = async () => {
     
 
     if (location?.pathname === '/bookings') {
-        // let city= defaultCity || "lagos"
         getBookings(defaultCity || "lagos")
     }
-    // let id = document.getElementById('merchant-id').value
+
     if (location?.pathname === `/${document.getElementById('merchant-id')?.value}`) {
-        console.log(location.pathname, "gg")
         getSigleMerchantSessions(id)
     }
     
     setTimeout(document.querySelector("#app").innerHTML = await view.getHtml()
     , 2000)
-    // document.querySelector("#app").innerHTML = await view.getHtml();
 };
 
 window.addEventListener("popstate", router);
 
-function getData(x){
-    console.log(x, "sds")
-}
+
 document.addEventListener("DOMContentLoaded", () => {
     
     document.body.addEventListener("click", e => {
-        // console.log(e.target.id, "sfddsf")
         // navbar navigation
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
@@ -222,7 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     phoneNumber: document.getElementById("phoneNumber").value
                 }
             }
-            // console.log(formData, "formData")
             registerUsers(userType, formData)
             
         }
@@ -317,7 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
             x.innerHTML="";
             document.body.appendChild(x);
             x.remove();
-            console.log("coose")
         }
         // open widget modal
         if (e.target.matches("[data-modal]")) {
@@ -381,7 +371,6 @@ document.addEventListener("DOMContentLoaded", () => {
         
         
         if (e.target.matches("[data-type]") && e.target.value === "WeekDay") {
-            // document.getElementById("no-warning").innerHTML= "Sessions hours are 9am to 8pm on weekdays."
             document.getElementById("startsAt").setAttribute("min", "09:00")
             document.getElementById("startsAt").setAttribute("max", "20:00")
     
@@ -400,7 +389,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("startsAt").setAttribute("step", "5400000")
         }
         let timey = document.getElementById("startsAt").value+":00"
-        // console.log(addtime(timey,document.getElementById("period").value), "validuty")
         document.getElementById("endsAt").value=addtime(timey,document.getElementById("period").value)
         let check = document.getElementById("startsAt").value
         let checkEnd = document.getElementById("endsAt").value
@@ -434,7 +422,6 @@ document.addEventListener("DOMContentLoaded", () => {
             getMerchants(1, e.target.value)
         }
         if (location?.pathname === '/bookings' && accessType === "USER") {
-            // city, merchant="", offset=1, period=30
             let city = document.getElementById('select-location').value
             let merchant = document.getElementById('main-search').value
             let period = document.getElementById('select-period').value
@@ -502,7 +489,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target.matches("[data-phoneNumber]")) {
             let phoneFormat = /^\d{10}$/
             let phoneCheck = e.target.value.match(phoneFormat);
-            // if (e.target.value.length < 10 ) {
             if (phoneCheck === null) {
                 document.getElementById("phoneNumber-warning").innerText = "Phone number must be 11 characters";
             }
@@ -540,7 +526,6 @@ const validateStartTime = (check, min, max)=>{
     min = parseInt(min)
     max = parseInt(max)
     let isValid = false
-    console.log(check, min, max, "check, min, max")
     if (check > min && check < max) {
         isValid = true
     }
@@ -550,7 +535,6 @@ const validateStartTime = (check, min, max)=>{
     check = parseInt(check.slice(0, 2))
     max = parseInt(max)
     let isValid = true
-    // console.log(check, max, "check,  max")
     if (check >= max ) {
         isValid = false
     }
@@ -560,11 +544,6 @@ const validateStartTime = (check, min, max)=>{
 const copytoClipboard = (id)=> {
     // Get the text field
     let copyText = document.getElementById(id);
-  console.log(copyText.innerHTML, "copy")
-    // Select the text field
-    // copyText.select();
-    // copyText.setSelectionRange(0, 99999); // For mobile devices
-  
      // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.innerHTML);
   
