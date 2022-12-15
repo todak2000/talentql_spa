@@ -99,8 +99,8 @@ export function getMerchants(offset=1, query=""){
             response.data.forEach(x => {
                 if (x.merchantId) {
                     document.getElementById('card-result').innerHTML+=`
-                    <div class="cardy" id="${x.merchantId}" data-merchantId>
-                        <div class="innder-cardy" id="${x.merchantId}" data-merchantId></div>
+                    <div class="cardy" id="${x.merchantId}" data-merchantid>
+                        <div class="innder-cardy" id="${x.merchantId}" data-merchantid></div>
                         <h5 class="card-h5">${x.name}</h5>
                         <h5 class="card-h5">${x.cityOfOperation}</h5>
                     </div>
@@ -189,8 +189,8 @@ export function getSigleMerchantSessions(merchantId){
             document.getElementById('card-result').innerHTML="";
             response.forEach(x => {
                 document.getElementById('card-result').innerHTML+=`
-                <div class="cardy" id="${x.id}" data-merchantId>
-                    <div class="innder-cardy" id="${x.id}" data-merchantId></div>
+                <div class="cardy" id="${x.id}" data-merchantid>
+                    <div class="innder-cardy" id="${x.id}" data-merchantid></div>
                     <h5 class="card-h5">Type: ${x.type}</h5>
                     <h5 class="card-h5">Period: ${x.startsAt.slice(0,-8)} - ${x.endsAt.slice(0,-8)}</h5>
                     <button type="button" class="btn-book" id="${x.id}"  data-bookings>Book this session</button>

@@ -26,7 +26,7 @@ export default class extends AbstractView {
                 <form>
                     <input class="form-input" type="text" id="username" name="username" data-username  minlength="6" maxlength="20" placeholder="Username" required />
                     <input class="form-input" type="password" id="password" name="password" data-password  minlength="6"  placeholder="Password" required />
-                    <input class="form-input" type="text" id="accessType" name="accessType" data-accessType  hidden />
+                    <input class="form-input" type="text" id="accessType" name="accessType" data-accesstype  hidden />
                     <button class="form-btn" id="signin-sumbit-btn" data-login>Submit</button>
                 </form>
                 <div class="bottom-signup"><a href="/login" class="nav__link mr-2" data-link>Back</a></div>

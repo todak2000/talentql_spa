@@ -30,16 +30,16 @@ export default class extends AbstractView {
                     <p id="email-warning"></p>
                     <input class="form-input" type="text" id="dob" name="dob" data-dob   placeholder="Date of Birth" onfocus="(this.type='date')" required />
                     <p id="no-warning"></p>
-                    <input class="form-input" type="text" id="cityOfResidence" name="cityOfResidence" data-cityOfResidence  minlength="2" maxlength="20" placeholder="City of Residence" />
-                    <input class="form-input" type="text" id="cityOfOperation" name="cityOfOperation" data-cityOfOperation  minlength="2" maxlength="20" placeholder="City of Operation" required/>
+                    <input class="form-input" type="text" id="cityOfResidence" name="cityOfResidence" data-cityofresidence  minlength="2" maxlength="20" placeholder="City of Residence" />
+                    <input class="form-input" type="text" id="cityOfOperation" name="cityOfOperation" data-cityofoperation  minlength="2" maxlength="20" placeholder="City of Operation" required/>
                     <p id="city-warning"></p>
                     <input class="form-input" type="text" id="username" name="username" data-username  minlength="6" maxlength="20" placeholder="Username" required />
                     <p id="username-warning"></p>
                     <input class="form-input" type="password" id="password" name="password" data-password  minlength="6"  placeholder="Password" required />
                     <p id="password-warning"></p>
-                    <input class="form-input" type="text" id="phoneNumber" name="phoneNumber" data-phoneNumber  minlength="10" maxlength="20" placeholder="Phone Number" />
+                    <input class="form-input" type="text" id="phoneNumber" name="phoneNumber" data-phonenumber  minlength="10" maxlength="20" placeholder="Phone Number" />
                     <p id="phoneNumber-warning"></p>
-                    <input class="form-input" type="text" id="accessType" name="accessType" data-accessType  hidden />
+                    <input class="form-input" type="text" id="accessType" name="accessType" data-accesstype  hidden />
                     <button class="form-btn" id="signup-sumbit-btn" data-register>Submit</button>
                 </form>
                 <div class="bottom-signup"><a href="/register" class="nav__link mr-2" data-link>Back</a></div>
