@@ -39,7 +39,7 @@ export default class extends AbstractView {
                 </div>
                 
                 <section class="card-container" id="card-result">
-                   
+                    <div class="loader"></div>
                 </section>
                 
             </div>
@@ -47,14 +47,17 @@ export default class extends AbstractView {
             :
             `
             <div class="main-section">
-            <h1 class="merchant-hi">${location.pathname === '/' ? " Session Bookings": "Create New Session"}</h1>
+                <div class="flex-row">
+                    <h1 class="merchant-hi">${location.pathname === '/' ? " Session Bookings": "Create New Session"}</h1>
+                    <button data-modal>Expose Widget</button>
+                </div>
                 <div class="flex-center bottom-fix">
                     <button class="pagination-btn" id="previous"  style="display:none" data-page>Previous</button>
                     <button class="pagination-btn" id="next" style="display:none" data-page>Next</button>
                 </div>
                 
                 <section class="card-container" id="card-result">
-                   
+                    <div class="loader"></div>
                 </section>
                 
             </div>

@@ -132,6 +132,7 @@ export function getMerchants(offset=1, query=""){
 export function getBookings(city, merchant="", offset=1, period=30){
     let dayDate = new Date().toISOString().slice(0, 10);
     let future =  new Date()
+    // document.getElementById('card-result').innerHTML=`<div class="loader"></div>`; 
     future.setDate(future.getDate() + period);
     let futureDate = future.toISOString().split('T')[0];
     let p = `${dayDate}:${futureDate}`
@@ -200,7 +201,7 @@ export function getSigleMerchantSessions(merchantId){
                 <div class="cardy" id="${x.id}" data-merchantId>
                     <div class="innder-cardy" id="${x.id}" data-merchantId></div>
                     <h5 class="card-h5">Type: ${x.type}</h5>
-                    <h5 class="card-h5">Period: ${x.startsAt}: ${x.endsAt}</h5>
+                    <h5 class="card-h5">Period: ${x.startsAt.slice(0,-8)} - ${x.endsAt.slice(0,-8)}</h5>
                     <button type="button" class="btn-book" id="${x.id}"  data-bookings>Book this session</button>
                 </div>
                 `;
@@ -230,18 +231,23 @@ export function bookSession(data){
         .then(response => {
             document.getElementById("message").style.display = "none";
             document.getElementById("message").innerText = "";
+            let btn = document.getElementById('booking-sumbit-btn');
+        
             if (response.errors) {
                 document.getElementById("message").style.display = "block";
                 document.getElementById("message").style.color = "red";
                 document.getElementById("message").style.textAlign = "center"
                 document.getElementById("message").innerText = "Oops! an error occured";
+                btn.disabled = false;
+                btn.innerText = "Submit Again"
             }
             else{
                 document.getElementById("message").style.display = "block";
                 document.getElementById("message").style.color = "green";
                 document.getElementById("message").style.textAlign = "center"
                 document.getElementById("message").innerText = "Studio Session successfully booked!";
-                
+                btn.disabled = true;
+                btn.innerText = "Completed!"
             }
             console.log(response)
         })
@@ -255,13 +261,17 @@ export function createSession(data){
         headers: {'Content-Type': 'application/json', Prefer: 'code=200, dynamic=true'},
         body: JSON.stringify(data) 
       };
-      let userIda = "b2c13957-1b5a-5069-3ae5-713ec739fdd0"
-      fetch(`${url}/studios/${userIda}`, options)
+    //   let userIda = "b2c13957-1b5a-5069-3ae5-713ec739fdd0"
+      fetch(`${url}/studios/${userId}`, options)
         .then(response => response.json())
         .then(response => {
             document.getElementById("message").style.display = "none";
             document.getElementById("message").innerText = "";
+            let btn = document.getElementById('create-sumbit-btn');
+            
             if (response.errors) {
+                btn.disabled = false;
+                btn.innerText = "Submit Again"
                 document.getElementById("message").style.display = "block";
                 document.getElementById("message").style.color = "red";
                 document.getElementById("message").style.textAlign = "center"
@@ -276,7 +286,8 @@ export function createSession(data){
                 document.getElementById("message").style.color = "green";
                 document.getElementById("message").style.textAlign = "center"
                 document.getElementById("message").innerText = "Studio Session successfully created!";
-                
+                btn.disabled = true;
+                btn.innerText = "Completed!"
             }
             console.log(response)
         })

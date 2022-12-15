@@ -5,6 +5,7 @@
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+ 
 body{
     font-family: 'Space Grotesk', sans-serif;
 }
@@ -30,6 +31,22 @@ body{
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+}
+.clipp{
+    font-size: 0.9rem;
+    background: #000000;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+    font-family: 'Courier New', Courier, monospace;
+}
+.clipp-btn{
+    border:1px solid transparent;
+    background-color: #006a95;
+    color: #fff;
+    padding: 0.5rem;
+    cursor: pointer;
 }
 .signup-div{
     width:50%;
@@ -79,7 +96,6 @@ body{
     width: 200px;
     padding-bottom: 0.2rem;
     border-radius: 0 0 10px 10px;
-    /* background-color: #f7f7f8; */
     margin: 0.5rem;
 }
 .innder-cardy{
@@ -137,7 +153,7 @@ body{
     display: none;
     margin: auto;
 }
-#type{
+#type, #period{
     width:100%;
     height: 40px;
 }
@@ -148,6 +164,25 @@ body{
 }
 .form-input{
     width: 90%;
+    border: 1px solid #006a95;
+    background: #FFF;
+    margin: 0 0 0.5rem;
+    padding: 0.5rem 5%;
+    height:20px;
+    font-family: 'Space Grotesk';
+    color:#006a95;
+}
+.form-input-widget {
+    width: 100%;
+    border: 1px solid #006a95;
+    background: #FFF;
+    margin: 0 0 0.5rem;
+    padding: 0.5rem 5%;
+    font-family: 'Space Grotesk';
+    color: #006a95;
+}
+.form-time{
+    width: 38%;
     border: 1px solid #006a95;
     background: #FFF;
     margin: 0 0 0.5rem;
@@ -178,6 +213,7 @@ form {
     justify-content: center;
     width: 100%;
     margin-top:1rem;
+    cursor: pointer;
 }
 #error{
     color:red;
@@ -224,6 +260,40 @@ form {
 .bookings-form{
     display: none;
 }
+
+#startsAt + span {
+    padding-right: 30px;
+  }
+  
+.time-div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #006a95;
+    width: 80px;
+    height: 80px;
+    margin: 20vh auto;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+ 
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 /* media Query for responsiveness */
 @media (max-width: 690px) {
     .mobile-hide{

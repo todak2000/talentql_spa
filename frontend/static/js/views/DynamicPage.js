@@ -32,7 +32,7 @@ export default class extends AbstractView {
                     <button class="pagination-btn" id="next" style="display:none" data-page>Next ${current+1}</button>
                 </div>
                 <section class="card-container" id="card-result">
-                  
+                    <div class="loader"></div>
                 </section>
 
                 <div id="bookings-form">
@@ -62,14 +62,22 @@ export default class extends AbstractView {
                 <div id="newsession-form">
                     <p id="message"></p>
                     <form>
-                        <input class="form-input" type="text" id="startsAt" name="startsAt" data-startsAt   placeholder="Start Time" onfocus="(this.type='time')" required />
-                        <p id="no-warning"></p>
-                        <input class="form-input" type="text" id="endsAt" name="endsAt" data-endsAt   placeholder="End Time" onfocus="(this.type='time')" required />
-                        <p id="no-warning"></p>
-                        <select class="form-input" id="type" name="type" data-type >
-                            <option value="WeekDay" selected >WeekDay</option>
-                            <option value="WeekEnd">WeekEnd</option>
+                        <select class="form-input" id="period" name="period" data-period >
+                            <option value="45" selected >Select preffered time slot</option>
+                            <option value="45" >45 minutes</option>
+                            <option value="60">60 minutes</option>
+                            <option value="90">90 minutes</option>
                         </select>
+                        <select class="form-input" id="type" name="type" data-type >
+                            <option value="WeekDay" selected >Select preffered Day type</option>
+                            <option value="WeekDay">WeekDay (Mon - Fri)</option>
+                            <option value="WeekEnd">WeekEnd (Sat)</option>
+                        </select>
+                        <div class="time-div">
+                            <input class="form-time" type="text" id="startsAt" name="startsAt" data-startsAt   placeholder="Start Time" onfocus="(this.type='time')" required /> 
+                            <input class="form-time" type="time" id="endsAt" name="endsAt" data-endsAt   placeholder="End Time" disabled />
+                        </div>
+                        <p id="no-warning"></p>
         
                         <button class="form-btn" id="create-sumbit-btn" data-create-submit>Submit</button>
                     </form>
